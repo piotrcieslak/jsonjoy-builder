@@ -1,21 +1,19 @@
 import { type ComponentProps, forwardRef, useEffect, useState } from "react";
 import { cn } from "../../lib/utils.ts";
 
-interface InputProps extends ComponentProps<"input"> {
+export interface InputProps extends ComponentProps<"input"> {
   validate?: (value: string) => string | null;
-  showError?: boolean;
   errorMessage?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { className, type, validate, showError = true, errorMessage, ...props },
+    { className, type, validate, errorMessage, ...props },
     ref,
   ) => {
     const [error, setError] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log("handle change");
       const value = e.target.value;
       const validationError = validate?.(value) || null;
       setError(validationError);
@@ -43,12 +41,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {...props}
           onChange={handleChange}
         />
-        {showError && hasError && (
+        {hasError && (
           <span className="text-red-500 text-sm mt-1 block">
             {errorMessage || error}
           </span>
-        )}
-      </div>
+        )
+        }
+      </div >
     );
   },
 );

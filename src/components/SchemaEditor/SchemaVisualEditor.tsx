@@ -130,12 +130,12 @@ const SchemaVisualEditor: FC<SchemaVisualEditorProps> = ({
     schema.properties &&
     Object.keys(schema.properties).length > 0;
 
-  const hasPatternPropertiesFields =
+  const hasPropertiesFields =
     hasObjectSchema &&
     schema.patternProperties &&
     Object.keys(schema.patternProperties).length > 0;
 
-  const hasFields = hasProperties || hasPatternPropertiesFields;
+  const hasFields = hasProperties || hasPropertiesFields;
 
   return (
     <div className="p-4 h-full flex flex-col overflow-auto jsonjoy">

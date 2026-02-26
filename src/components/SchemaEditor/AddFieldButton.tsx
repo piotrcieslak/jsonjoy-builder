@@ -125,12 +125,12 @@ const AddFieldButton: FC<AddFieldButtonProps> = ({
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
-                    {/* PatternProperties toggle */}
+                    {/* Properties toggle */}
                     <ButtonToggle
                       onClick={() => {
                         setPatternProperty(!isPatternProperty);
 
-                        // Reset required for pattern properties, as they cannot be required
+                        // Reset required for  properties, as they cannot be required
                         if (fieldRequired && !isPatternProperty) {
                           setFieldRequired(false);
                         }
@@ -162,11 +162,11 @@ const AddFieldButton: FC<AddFieldButtonProps> = ({
                     validate={
                       isPatternProperty
                         ? (value) => {
-                            const { valid, error } =
-                              validateRegexPattern(value);
+                          const { valid, error } =
+                            validateRegexPattern(value);
 
-                            return valid ? null : error;
-                          }
+                          return valid ? null : error;
+                        }
                         : undefined
                     }
                     required
