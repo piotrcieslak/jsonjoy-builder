@@ -10,7 +10,7 @@ lerna-debug.log*
 .rslib
 
 node_modules
-dist
+# dist
 dist-demo
 build
 dist-ssr
