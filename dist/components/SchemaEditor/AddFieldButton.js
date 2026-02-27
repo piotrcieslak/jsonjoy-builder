@@ -90,6 +90,7 @@ const AddFieldButton = ({ onAddField, variant = "primary" })=>{
                         /*#__PURE__*/ jsxs("form", {
                             onSubmit: handleSubmit,
                             className: "space-y-6",
+                            id: "add-field-form",
                             children: [
                                 /*#__PURE__*/ jsxs("div", {
                                     className: "grid grid-cols-1 lg:grid-cols-2 gap-6",
@@ -354,6 +355,7 @@ const AddFieldButton = ({ onAddField, variant = "primary" })=>{
                                         /*#__PURE__*/ jsx(Button, {
                                             type: "submit",
                                             size: "sm",
+                                            form: "add-field-form",
                                             children: t.fieldAddNewConfirm
                                         })
                                     ]
