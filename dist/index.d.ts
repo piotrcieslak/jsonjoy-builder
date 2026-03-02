@@ -65,6 +65,10 @@ export declare const de: Translation;
 
 export declare const en: Translation;
 
+export declare const es: Translation;
+
+export declare const fr: Translation;
+
 /** @public */
 export declare type JSONSchema = boolean | (z.infer<typeof baseSchema> & {
     $defs?: Record<string, JSONSchema>;
@@ -118,6 +122,10 @@ export declare interface JsonValidatorProps {
     onOpenChange: (open: boolean) => void;
     schema: JSONSchema;
 }
+
+export declare const pl: Translation;
+
+export declare const ru: Translation;
 
 /** @public */
 export declare function SchemaInferencer({ open, onOpenChange, onSchemaInferred, }: SchemaInferencerProps): JSX.Element;
@@ -989,5 +997,9 @@ export declare interface Translation {
 }
 
 export declare const TranslationContext: Context<Translation>;
+
+export declare const uk: Translation;
+
+export declare const zh: Translation;
 
 export { }

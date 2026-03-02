@@ -116,15 +116,16 @@ const ObjectEditor = ({ schema, validationNode, onChange, depth = 0, readOnly = 
                     className: "text-sm text-muted-foreground italic p-2 text-center border rounded-md",
                     children: t.objectPropertiesNone
                 }),
-                !readOnly && /*#__PURE__*/ jsxs("div", {
+                /*#__PURE__*/ jsxs("div", {
                     className: "mt-4 flex flex-row gap-x-4",
                     children: [
-                        /*#__PURE__*/ jsx(AddFieldButton, {
+                        readOnly ? null : /*#__PURE__*/ jsx(AddFieldButton, {
                             onAddField: handleAddProperty,
                             variant: "secondary"
                         }),
                         /*#__PURE__*/ jsx(ButtonToggle, {
                             onClick: handleAdditionalPropertiesToggle,
+                            readOnly: readOnly,
                             className: false === additionalProperties ? "bg-amber-50 text-amber-600" : "bg-lime-50 text-lime-600",
                             children: false === additionalProperties ? t.additionalPropertiesForbid : t.additionalPropertiesAllow
                         })
